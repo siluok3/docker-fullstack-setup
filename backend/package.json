@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Node, Express and Mongo docker config backend",
   "main": "index.js",
-  "repository": "",
+  "repository": "https://github.com/siluok3/docker-fullstack-setup",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon ./index.js --exec babel-node -e js"
