@@ -1,12 +1,12 @@
 FROM node
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-COPY package*.json ./
+COPY package*.json /app/
 
 RUN yarn install
 
-COPY . .
+COPY . /app/
 
 EXPOSE 4000
 CMD [ "npm", "start"]
