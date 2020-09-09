@@ -1,7 +1,7 @@
 version: '3.8'
 services: 
   fullstack-webapp:
-    container_name: fullstack-webapp
+    container_name: node-backend
     restart: always
     build: ./backend
     ports:
@@ -9,13 +9,19 @@ services:
     depends_on:
       - mongo
   client:
-    container_name: client
+    stdin_open: true
+    container_name: react-frontend
     restart: always
-    build: ./frontend
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
-    links:
-      - "fullstack-webapp"
+    # links:
+    #   - "fullstack-webapp"
+    volumes:
+      - "./frontend:/client"
+      - "/client/node_modules"
   mongo:
     container_name: mongo
     image: mongo

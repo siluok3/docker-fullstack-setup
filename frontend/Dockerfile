@@ -1,12 +1,11 @@
-FROM node
+FROM node:alpine
 
 WORKDIR /client
 
-COPY package*.json /client/
+COPY package*.json /client
 
 RUN yarn install
 
-COPY . /client/
+COPY . /client
 
-EXPOSE 3000
-CMD [ "npm", "start"]
+CMD ["yarn", "run", "start"]
