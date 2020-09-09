@@ -1,2 +1,4 @@
 # node-mongo-docker
-A node and express docker template with Mongo
+To build: `docker build -t siluok3:node-backend .`
+
+To run: `docker run -p 4000:4000 siluok3:node-backend`

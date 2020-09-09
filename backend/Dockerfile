@@ -1,12 +1,15 @@
 FROM node
 
+RUN mkdir /app
 WORKDIR /app
 
-COPY package*.json /app/
+ENV PATH /app/node_modules/.bin:$PATH
+
+COPY package*.json /app
 
 RUN yarn install
 
-COPY . /app/
+COPY . /app
 
 EXPOSE 4000
-CMD [ "npm", "start"]
+CMD ["npm", "start"]
