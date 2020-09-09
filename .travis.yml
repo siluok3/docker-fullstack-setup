@@ -7,3 +7,12 @@ services:
 script:
   - docker build -t siluok3/node-backend ./backend
   - docker images siluok3/node-backend
+
+before_deploy:
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+
+deploy:
+  provider: script
+  script: docker push siluok3/node-backend
+  on:
+    branch: master
