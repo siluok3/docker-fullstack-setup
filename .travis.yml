@@ -6,4 +6,4 @@ services:
 
 script:
   - docker build -t siluok3/node-backend ./backend
-  - docker image siluok3/node-backend
+  - docker images siluok3/node-backend
