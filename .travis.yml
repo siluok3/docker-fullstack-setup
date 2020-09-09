@@ -5,5 +5,5 @@ services:
   - docker
 
 script:
-  - docker build -t siluok3/node-backend .
+  - docker build -t siluok3/node-backend ./backend
   - docker image siluok3/node-backend
